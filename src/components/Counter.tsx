@@ -1,7 +1,7 @@
-import "./counter.scss";
+import classes from "./Counter.module.scss";
 
 const Counter = () => {
-  return <div className="root">Counter</div>;
+  return <div className={classes.root}>Counter</div>;
 };
 
 export default Counter;
