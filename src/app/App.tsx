@@ -1,11 +1,9 @@
 import { useContext, useState } from "react";
 import { Link, Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
-import Counter from "./components/Counter";
-import { classNames } from "./helpers/classNames";
 import "./styles/index.scss";
-import { Theme, ThemeContext } from "./theme/ThemeContext";
-import { UseTheme } from "./theme/UseTheme";
+import { UseTheme } from "app/providers/ThemeProvider/lib/UseTheme";
+import { classNames } from "shared/lib/classNames/classNames";
 
 const App = () => {
   const { theme, toggleTheme } = UseTheme();
@@ -16,7 +14,6 @@ const App = () => {
       <Link to="/noMain">No Main</Link>
       <button onClick={toggleTheme}> СМЕНИТЬ ТЕМУ </button>
       <Routes>
-        <Route path="/main" element={<Counter />}></Route>
         <Route path="/noMain"></Route>
       </Routes>
     </div>
