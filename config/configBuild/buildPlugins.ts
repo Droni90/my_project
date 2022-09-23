@@ -1,13 +1,15 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import webpack, { web } from "webpack";
-import { BuildOptions } from "./types/config";
+import webpack from "webpack";
 import MiniCssExtructPlugin from "mini-css-extract-plugin";
-import { json } from "stream/consumers";
+import { BuildOptions } from "./types/config";
 
 export const buildPlugins = ({
   paths,
   isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] => {
+  // eslint-disable-next-line global-require
+  const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+
   return [
     new HtmlWebpackPlugin({
       template: paths.html,
@@ -20,5 +22,7 @@ export const buildPlugins = ({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
+    new webpack.HotModuleReplacementPlugin(),
+    new ReactRefreshWebpackPlugin(),
   ];
 };
