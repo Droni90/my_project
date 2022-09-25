@@ -10,7 +10,8 @@
     "lint:ts": " eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": " npx stylelint \"**/*.scss\"",
-    "lint:scss:fix": " eslint \"**/*.scss\" --fix"
+    "lint:scss:fix": " eslint \"**/*.scss\" --fix",
+    "test": "jest --config ./config/jest/jest.config.ts"
   },
   "repository": {
     "type": "git",
