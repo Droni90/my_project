@@ -11,12 +11,10 @@ const defaultTheme: Theme =
 const ThemeProvider: FC = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
-  const defaultProps = useMemo(() => {
-    return {
-      theme,
-      setTheme,
-    };
-  }, [theme]);
+  const defaultProps = useMemo(() => ({
+    theme,
+    setTheme,
+  }), [theme]);
 
   return (
     <ThemeContext.Provider value={defaultProps}>
