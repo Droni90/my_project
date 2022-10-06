@@ -6,9 +6,9 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/ui/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import cls from './Sidebar.module.scss';
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
+import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
   className?: string;
@@ -34,7 +34,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         type="button"
         onClick={onToggle}
         theme={ThemeButton.BACKGROUND_INVERTED}
-        square={true}
+        square
         size={ButtonSize.L}
       >
         {collapsed ? '>' : '<'}

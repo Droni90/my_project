@@ -10,12 +10,12 @@ export interface ComponentRenderOptions {
 
 export function componentRender(
   component: ReactNode,
-  optiopns: ComponentRenderOptions = {}
+  optiopns: ComponentRenderOptions = {},
 ) {
   const { route = '/' } = optiopns;
   return render(
     <MemoryRouter initialEntries={[route]}>
       <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
-    </MemoryRouter>
+    </MemoryRouter>,
   );
 }
