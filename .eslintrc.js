@@ -7,7 +7,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -33,6 +33,13 @@ module.exports = {
       { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
     ],
     'max-len': ['error', { ignoreComments: true, code: 180 }],
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+    'comma-dangle': 'off',
+    'operator-linebreak': 'off',
+    'implicit-arrow-linebreak': 'off',
   },
   globals: { __IS_DEV__: true },
   overrides: [
