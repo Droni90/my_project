@@ -1,4 +1,4 @@
-name: linting, tesing, building
+name: linting, testing, building
 on:
   push:
     branches: [master]
@@ -10,6 +10,7 @@ jobs:
     strategy:
       matrix:
         node-version: [17.x]
+
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}

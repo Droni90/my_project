@@ -1,6 +1,5 @@
 node_modules
-package-lock.json
 /build
 /storybook-static
-./loki/report.html
-./loki/reposrt.json
+.loki/report.html
+.loki/report.json
