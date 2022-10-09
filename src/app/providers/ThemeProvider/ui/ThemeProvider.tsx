@@ -15,6 +15,7 @@ const defaultTheme: Theme =
 const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   const { children, initialTheme } = props;
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
+  document.body.className = theme;
 
   const defaultProps = useMemo(
     () => ({
