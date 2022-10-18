@@ -40,6 +40,7 @@ module.exports = {
     'comma-dangle': 'off',
     'operator-linebreak': 'off',
     'implicit-arrow-linebreak': 'off',
+    'no-param-reassign': 0,
   },
   globals: { __IS_DEV__: true },
   overrides: [
