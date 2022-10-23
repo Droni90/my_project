@@ -7,6 +7,7 @@ import { BuildOptions } from './types/config';
 export const buildPlugins = ({
   paths,
   isDev,
+  apiUrl,
 }: BuildOptions): webpack.WebpackPluginInstance[] => {
   // eslint-disable-next-line global-require
   const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
@@ -21,6 +22,7 @@ export const buildPlugins = ({
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl),
     }),
     new ReactRefreshWebpackPlugin(),
   ];
@@ -30,7 +32,7 @@ export const buildPlugins = ({
     plugins.push(
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
-      }),
+      })
     );
   }
 

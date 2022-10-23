@@ -6,8 +6,8 @@ import { SidebarItemType } from 'widgets/Sidebar/model/items';
 import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
-  item?: SidebarItemType;
-  collapsed?: boolean;
+  item: SidebarItemType;
+  collapsed: boolean;
 }
 export const SidebarItem = memo((props: SidebarItemProps) => {
   const { item, collapsed } = props;

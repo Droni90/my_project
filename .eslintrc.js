@@ -41,8 +41,9 @@ module.exports = {
     'operator-linebreak': 'off',
     'implicit-arrow-linebreak': 'off',
     'no-param-reassign': 0,
+    'no-undef': 'off',
   },
-  globals: { __IS_DEV__: true },
+  globals: { __IS_DEV__: true, __API__: true },
   overrides: [
     {
       files: ['**/src/**/*.test.{ts,tsx}'],

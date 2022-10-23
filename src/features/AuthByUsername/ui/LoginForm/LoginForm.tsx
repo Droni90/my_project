@@ -20,7 +20,7 @@ import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLogi
 
 export interface LoginFormProps {
   className?: string;
-  onSuccess?: () => void;
+  onSuccess: () => void;
 }
 
 const initialReducers: ReducerList = {
