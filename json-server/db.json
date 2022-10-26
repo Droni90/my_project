@@ -1,15 +1,33 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "users": [{ "id": 1, "username": "admin", "password": "123" }],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123"
+    }
+  ],
   "profile": {
     "first": "Anri",
     "lastname": "Rey",
     "age": 27,
     "currency": "RUB",
-    "country": "Russia",
-    "city": "Sochi",
+    "country": "Kazakhstan",
+    "city": "SochiReal",
     "username": "AnriRey",
-    "avatar": ""
+    "avatar": "https://funart.pro/uploads/posts/2021-07/1626205442_26-funart-pro-p-kot-s-ukhmilkoi-zhivotnie-krasivo-foto-29.jpg"
   }
 }
