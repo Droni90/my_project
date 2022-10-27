@@ -43,7 +43,7 @@ module.exports = {
     'no-param-reassign': 0,
     'no-undef': 'off',
   },
-  globals: { __IS_DEV__: true, __API__: true },
+  globals: { __IS_DEV__: true, __API__: true, __PROJECT__: true },
   overrides: [
     {
       files: ['**/src/**/*.test.{ts,tsx}'],
