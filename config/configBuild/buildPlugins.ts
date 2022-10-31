@@ -2,6 +2,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 import MiniCssExtructPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BuildOptions } from './types/config';
 
 export const buildPlugins = ({
@@ -10,8 +11,6 @@ export const buildPlugins = ({
   apiUrl,
   project,
 }: BuildOptions): webpack.WebpackPluginInstance[] => {
-  // eslint-disable-next-line global-require
-  const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
   const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html,
@@ -26,10 +25,10 @@ export const buildPlugins = ({
       __API__: JSON.stringify(apiUrl),
       __PROJECT__: JSON.stringify(project),
     }),
-    new ReactRefreshWebpackPlugin(),
   ];
 
   if (isDev) {
+    plugins.push(new ReactRefreshWebpackPlugin());
     plugins.push(new webpack.HotModuleReplacementPlugin());
     plugins.push(
       new BundleAnalyzerPlugin({
