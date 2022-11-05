@@ -9,7 +9,7 @@ import {
   updateProfileData,
 } from 'entities/Profile';
 import { useCallback } from 'react';
-import { UseAppDispatch } from 'shared/lib/hooks/UseAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/UseAppDispatch';
 import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -20,7 +20,7 @@ const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   const { t } = useTranslation();
   const { className } = props;
   const readonly = useSelector(getProfileReadonly);
-  const dispatch = UseAppDispatch();
+  const dispatch = useAppDispatch();
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false));

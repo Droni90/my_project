@@ -17,7 +17,7 @@ import {
   DinamicModuleLoader,
 } from 'shared/lib/components/DinamicModuleLoader/DinamicModuleLoader';
 import { useCallback, useEffect } from 'react';
-import { UseAppDispatch } from 'shared/lib/hooks/UseAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/UseAppDispatch';
 import { useSelector } from 'react-redux';
 import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/getProfileForm';
 import { CurrencyEnum } from 'entities/Currency';
@@ -35,7 +35,7 @@ interface ProfilePageProps {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const { t } = useTranslation('profile');
-  const dispatch = UseAppDispatch();
+  const dispatch = useAppDispatch();
   const formData = useSelector(getProfileForm);
   const data = useSelector(getProfileData);
   const isLoading = useSelector(getProfileIsLoading);
