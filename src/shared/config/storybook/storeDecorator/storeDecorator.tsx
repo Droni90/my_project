@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { profileReducer } from 'entities/Profile';
 import { loginReducer } from 'features/AuthByUsername/model/slice/LoginSlice';
-import { ReducerList } from 'shared/lib/components/DinamicModuleLoader/DinamicModuleLoader';
+import { ReducerList } from 'shared/lib/components/DinamicModuleLoader/DynamicModuleLoader';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 
 const defaultReducers: ReducerList = {

@@ -6,9 +6,9 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/ui/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import {
-  DinamicModuleLoader,
+  DynamicModuleLoader,
   ReducerList,
-} from 'shared/lib/components/DinamicModuleLoader/DinamicModuleLoader';
+} from 'shared/lib/components/DinamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/UseAppDispatch';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
@@ -57,7 +57,7 @@ const LoginForm = memo((props: LoginFormProps) => {
     }
   }, [onSuccess, username, password, dispatch]);
   return (
-    <DinamicModuleLoader reducers={initialReducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
       <div className={classNames(cls.LoginForm, [className])}>
         <Text title={t('Форма авторизации')} />
         {error && <Text theme={TextTheme.ERROR} text={error} />}
@@ -85,7 +85,7 @@ const LoginForm = memo((props: LoginFormProps) => {
           {t('Войти')}
         </Button>
       </div>
-    </DinamicModuleLoader>
+    </DynamicModuleLoader>
   );
 });
 

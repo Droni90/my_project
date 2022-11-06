@@ -4,9 +4,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/UseAppDispatch';
 
 import {
-  DinamicModuleLoader,
+  DynamicModuleLoader,
   ReducerList,
-} from 'shared/lib/components/DinamicModuleLoader/DinamicModuleLoader';
+} from 'shared/lib/components/DinamicModuleLoader/DynamicModuleLoader';
 
 import { useSelector } from 'react-redux';
 import { Text, TextAlignEnum, TextSizeEnum } from 'shared/ui/Text/Text';
@@ -134,8 +134,8 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     );
   }
   return (
-    <DinamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames(cls.mainLink, [className])}>{content}</div>
-    </DinamicModuleLoader>
+    </DynamicModuleLoader>
   );
 });

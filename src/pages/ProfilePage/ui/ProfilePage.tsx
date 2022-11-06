@@ -14,8 +14,8 @@ import {
 } from 'entities/Profile';
 import {
   ReducerList,
-  DinamicModuleLoader,
-} from 'shared/lib/components/DinamicModuleLoader/DinamicModuleLoader';
+  DynamicModuleLoader,
+} from 'shared/lib/components/DinamicModuleLoader/DynamicModuleLoader';
 import { useCallback, useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/UseAppDispatch';
 import { useSelector } from 'react-redux';
@@ -152,7 +152,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     [dispatch]
   );
   return (
-    <DinamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames('', [className])}>
         <ProfilePageHeader />
         {validateErrors?.map((error) => (
@@ -177,7 +177,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
           readonly={readonly}
         />
       </div>
-    </DinamicModuleLoader>
+    </DynamicModuleLoader>
   );
 };
 
