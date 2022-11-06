@@ -11,18 +11,26 @@ export enum TextAlignEnum {
   LEFT = 'left',
   CENTER = 'center',
 }
+
+export enum TextSizeEnum {
+  S = 'size_s',
+  M = 'size_m',
+  L = 'size_l',
+}
 interface TextProps {
   className?: string;
   text?: string;
   title?: string;
   theme?: TextTheme;
   align?: TextAlignEnum;
+  size?: TextSizeEnum;
 }
 export const Text = memo((props: TextProps) => {
   const {
     className,
     text,
     title,
+    size = TextSizeEnum.M,
     align = TextAlignEnum.LEFT,
     theme = TextTheme.PRIMARY,
   } = props;
@@ -30,6 +38,7 @@ export const Text = memo((props: TextProps) => {
   const mods: Mods = {
     [cls[theme]]: true,
     [cls[align]]: true,
+    [cls[size]]: true,
   };
   return (
     <div className={classNames(cls.Text, [className], mods)}>

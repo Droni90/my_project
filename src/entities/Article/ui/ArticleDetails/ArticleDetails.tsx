@@ -1,4 +1,4 @@
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/UseAppDispatch';
@@ -9,18 +9,29 @@ import {
 } from 'shared/lib/components/DinamicModuleLoader/DinamicModuleLoader';
 
 import { useSelector } from 'react-redux';
-import { Text, TextAlignEnum } from 'shared/ui/Text/Text';
+import { Text, TextAlignEnum, TextSizeEnum } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
+import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
+import { Icon } from 'shared/ui/Icon/Icon';
+import {
+  ArticleBlock,
+  ArticleBlockType,
+} from 'entities/Article/model/types/article';
+import { ArticleCodeBlockComponent } from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import cls from './ArticleDetails.module.scss';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
-import cls from './ArticleDetails.module.scss';
-
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -38,14 +49,47 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const article = useSelector(getArticleDetailsData);
   const error = useSelector(getArticleDetailsError);
 
+  const renderBlock = useCallback((block: ArticleBlock) => {
+    switch (block.type) {
+    case ArticleBlockType.CODE:
+      return (
+        <ArticleCodeBlockComponent
+          key={block.id}
+          className={cls.block}
+          block={block}
+        />
+      );
+    case ArticleBlockType.IMAGE:
+      return (
+        <ArticleImageBlockComponent
+          key={block.id}
+          className={cls.block}
+          block={block}
+        />
+      );
+    case ArticleBlockType.TEXT:
+      return (
+        <ArticleTextBlockComponent
+          key={block.id}
+          className={cls.block}
+          block={block}
+        />
+      );
+    default:
+      return null;
+    }
+  }, []);
+
   useEffect(() => {
-    dispatch(fetchArticleById(id));
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleById(id));
+    }
   }, [dispatch, id]);
 
   let content;
   if (isLoading) {
     content = (
-      <div>
+      <>
         <Skeleton
           className={cls.avatar}
           width={200}
@@ -56,7 +100,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         <Skeleton className={cls.skeleton} width={600} height={24} />
         <Skeleton className={cls.skeleton} width="100%" height={200} />
         <Skeleton className={cls.skeleton} width="100%" height={200} />
-      </div>
+      </>
     );
   } else if (error) {
     content = (
@@ -66,7 +110,28 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       />
     );
   } else {
-    <div>{t('Article details')}</div>;
+    content = (
+      <>
+        <div className={cls.avatarWrapper}>
+          <Avatar size={200} src={article?.img} className={cls.avatar} />
+        </div>
+        <Text
+          className={cls.title}
+          title={article?.title}
+          text={article?.subtitle}
+          size={TextSizeEnum.L}
+        />
+        <div className={cls.articleInfo}>
+          <Icon className={cls.icon} Svg={EyeIcon} />
+          <Text text={String(article?.views)} />
+        </div>
+        <div className={cls.articleInfo}>
+          <Icon className={cls.icon} Svg={CalendarIcon} />
+          <Text text={article?.createdAt} />
+        </div>
+        {article?.blocks.map(renderBlock)}
+      </>
+    );
   }
   return (
     <DinamicModuleLoader reducers={reducers} removeAfterUnmount>
