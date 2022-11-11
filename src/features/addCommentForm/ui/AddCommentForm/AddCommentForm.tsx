@@ -4,7 +4,7 @@ import { Input } from 'shared/ui/Input/ui/Input';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/UseAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import {
   DynamicModuleLoader,
   ReducerList,

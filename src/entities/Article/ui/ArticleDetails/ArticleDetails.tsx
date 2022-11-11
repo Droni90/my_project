@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/UseAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 
 import {
   DynamicModuleLoader,

@@ -17,13 +17,13 @@ import {
   DynamicModuleLoader,
 } from 'shared/lib/components/DinamicModuleLoader/DynamicModuleLoader';
 import { useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/UseAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/getProfileForm';
 import { CurrencyEnum } from 'entities/Currency';
 import { CountryEnum } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { useInitialEffect } from 'shared/lib/hooks/UseInitialEffect';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { useParams } from 'react-router-dom';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 

@@ -10,7 +10,7 @@ import {
   updateProfileData,
 } from 'entities/Profile';
 import { useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/UseAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
 import cls from './ProfilePageHeader.module.scss';
 

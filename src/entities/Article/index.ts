@@ -1,3 +1,7 @@
+export { ArticleList } from './ui/ArticleList/ArticleList';
+
+export { ArticleViewEnum } from './model/types/article';
+
 export { getArticleDetailsData } from './model/selectors/articleDetails';
 
 export { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
