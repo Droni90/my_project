@@ -1,3 +1,5 @@
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
+
 export { ArticleList } from './ui/ArticleList/ArticleList';
 
 export { ArticleViewEnum } from './model/types/article';

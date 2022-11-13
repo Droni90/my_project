@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ArticleList } from './ArticleList';
