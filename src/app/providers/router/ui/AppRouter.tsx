@@ -1,7 +1,5 @@
-import { getUserAuthData } from 'entities/User';
-import { memo, Suspense, useCallback, useMemo } from 'react';
-import { useSelector } from 'react-redux';
-import { Route, RouteProps, Routes } from 'react-router-dom';
+import { memo, Suspense, useCallback } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import {
   AppRoutesProps,
   routeConfig,
@@ -24,13 +22,7 @@ const AppRouter = () => {
       />
     );
   }, []);
-  return (
-    <Suspense fallback={<PageLoader />}>
-      <div className="page-wrapper">
-        <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>
-      </div>
-    </Suspense>
-  );
+  return <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>;
 };
 
 export default memo(AppRouter);
