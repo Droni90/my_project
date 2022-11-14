@@ -28,6 +28,7 @@ import {
 } from '../../model/slice/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { Page } from 'shared/ui/Page/Page';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -64,14 +65,14 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-      <div className={classNames(cls.mainLink, [className])}>
+      <Page className={classNames(cls.mainLink, [className])}>
         {t('Статья не найдена')}
-      </div>
+      </Page>
     );
   }
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.mainLink, [className])}>
+      <Page className={classNames(cls.mainLink, [className])}>
         <Button onClick={onBackToList} theme={ThemeButton.OUTLINE}>
           {t('Назад к списку')}
         </Button>
@@ -79,7 +80,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         <Text className={cls.commentTitle} title={t('Комментарии')} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={commentIsLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

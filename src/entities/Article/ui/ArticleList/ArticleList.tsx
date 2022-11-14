@@ -12,24 +12,15 @@ interface ArticleListProps {
   view?: ArticleViewEnum;
 }
 
+const getSkeletons = (view: ArticleViewEnum) =>
+  new Array(view === ArticleViewEnum.TILE ? 9 : 3)
+    .fill(0)
+    .map((item, index) => (
+      <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
+    ));
+
 export const ArticleList = memo((props: ArticleListProps) => {
   const { className, articles, isLoading, view = ArticleViewEnum.LIST } = props;
-
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.ArticleList, [className, cls[view]])}>
-        {new Array(view === ArticleViewEnum.TILE ? 9 : 3)
-          .fill(0)
-          .map((item, idx) => (
-            <ArticleListItemSkeleton
-              className={cls.card}
-              view={view}
-              key={idx}
-            />
-          ))}
-      </div>
-    );
-  }
 
   const renderArticle = (article: Article) => (
     <ArticleListItem
@@ -43,6 +34,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   return (
     <div className={classNames(cls.ArticleList, [className, cls[view]])}>
       {articles.length ? articles.map(renderArticle) : null}
+      {isLoading && getSkeletons(view)}
     </div>
   );
 });
