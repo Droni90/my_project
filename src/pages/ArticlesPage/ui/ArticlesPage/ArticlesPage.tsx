@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
 
-import { ArticleList, ArticleViewEnum } from 'entities/Article';
+import { ArticleList } from 'entities/Article';
 import {
   DynamicModuleLoader,
   ReducerList,

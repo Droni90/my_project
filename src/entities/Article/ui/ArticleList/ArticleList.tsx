@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextSizeEnum } from 'shared/ui/Text/Text';
@@ -12,6 +12,7 @@ interface ArticleListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleViewEnum;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleViewEnum) =>
@@ -22,7 +23,13 @@ const getSkeletons = (view: ArticleViewEnum) =>
     ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const { className, articles, isLoading, view = ArticleViewEnum.LIST } = props;
+  const {
+    className,
+    articles,
+    isLoading,
+    target,
+    view = ArticleViewEnum.TILE,
+  } = props;
   const { t } = useTranslation();
 
   const renderArticle = (article: Article) => (
@@ -31,6 +38,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
       className={cls.card}
       article={article}
       view={view}
+      target={target}
     />
   );
 
