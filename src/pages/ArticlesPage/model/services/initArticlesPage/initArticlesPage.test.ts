@@ -3,6 +3,7 @@ import { initArticlesPage } from './initArticlesPage';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');
+const params = new URLSearchParams();
 
 describe('initArticlesPage.test', () => {
   test('inited', async () => {
@@ -17,8 +18,7 @@ describe('initArticlesPage.test', () => {
         _inited: true,
       },
     });
-
-    await thunk.callThunk();
+    await thunk.callThunk(params);
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(fetchArticlesList).toBeCalledTimes(0);
   });
@@ -36,7 +36,7 @@ describe('initArticlesPage.test', () => {
       },
     });
 
-    await thunk.callThunk();
+    await thunk.callThunk(params);
     expect(thunk.dispatch).toBeCalledTimes(4);
     expect(fetchArticlesList).toBeCalledTimes(1);
   });
