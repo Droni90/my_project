@@ -1,11 +1,11 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextSizeEnum } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { List, WindowScroller } from 'react-virtualized';
 import { PAGE_ID } from 'widgets/Page/Page';
 import { ListRowProps } from 'react-virtualized/dist/es/List';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import cls from './ArticleList.module.scss';
 import { Article, ArticleViewEnum } from '../../model/types/article';
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';

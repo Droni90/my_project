@@ -1,11 +1,11 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-import ProfilePage from 'pages/ProfilePage/ui/ProfilePage';
 import { StoreDecorator } from 'shared/config/storybook/storeDecorator/storeDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/themeDecorator/themeDecorator';
 import { CountryEnum } from 'entities/Country';
 import { CurrencyEnum } from 'entities/Currency';
+import ProfilePage from './ProfilePage';
 
 export default {
   title: 'pages/ProfilePage',
