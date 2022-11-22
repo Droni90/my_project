@@ -36,7 +36,18 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'target'] },
+      {
+        markupOnly: true,
+        ignoreAttribute: [
+          'data-testid',
+          'to',
+          'target',
+          'justify',
+          'align',
+          'direction',
+          'gap',
+        ],
+      },
     ],
     'max-len': ['error', { ignoreComments: true, code: 180 }],
     'jsx-a11y/no-static-element-interactions': 'off',
@@ -55,7 +66,7 @@ module.exports = {
   overrides: [
     {
       files: ['**/src/**/*.test.{ts,tsx}'],
-      rules: { 'i18next/no-literal-string': 'off' },
+      rules: { 'i18next/no-literal-string': 'off', 'max-len': 'off' },
     },
   ],
 };
