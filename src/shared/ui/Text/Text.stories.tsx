@@ -69,3 +69,17 @@ Primary.args = {
   text: 'Description ... Description',
   size: TextSizeEnum.L,
 };
+
+export const SizeM = Template.bind({});
+SizeM.args = {
+  title: 'Title lorem ipsun',
+  text: 'Description ... Description',
+  size: TextSizeEnum.L,
+};
+
+export const SizeS = Template.bind({});
+SizeS.args = {
+  title: 'Title lorem ipsun',
+  text: 'Description ... Description',
+  size: TextSizeEnum.L,
+};
