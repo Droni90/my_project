@@ -554,14 +554,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://funart.pro/uploads/posts/2021-07/1626205442_26-funart-pro-p-kot-s-ukhmilkoi-zhivotnie-krasivo-foto-29.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://funart.pro/uploads/posts/2021-07/1626205442_26-funart-pro-p-kot-s-ukhmilkoi-zhivotnie-krasivo-foto-29.jpg"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": ["MANAGER"],
       "avatar": "https://funart.pro/uploads/posts/2021-07/1626205442_26-funart-pro-p-kot-s-ukhmilkoi-zhivotnie-krasivo-foto-29.jpg"
     }
   ],
