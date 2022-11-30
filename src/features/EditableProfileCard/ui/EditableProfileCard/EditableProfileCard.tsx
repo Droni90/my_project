@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { FC, memo, useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 
@@ -163,6 +163,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             key={error}
             theme={TextTheme.ERROR}
             text={validateErrorTranslates[error]}
+            data-testid="EditableProfileCard.Error"
           />
         ))}
         <ProfileCard
