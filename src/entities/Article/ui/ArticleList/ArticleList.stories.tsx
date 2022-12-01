@@ -2,7 +2,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ArticleList } from './ArticleList';
-import { Article, ArticleViewEnum } from '../../model/types/article';
+import { Article } from '../../model/types/article';
+import { ArticleViewEnum } from 'entities/Article';
 
 const article = {
   id: '1',

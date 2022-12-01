@@ -5,9 +5,10 @@ import { useTranslation } from 'react-i18next';
 import { List, WindowScroller } from 'react-virtualized';
 import { PAGE_ID } from 'widgets/Page/Page';
 import { ListRowProps } from 'react-virtualized/dist/es/List';
+import { ArticleViewEnum } from '../../model/consts/consts';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import cls from './ArticleList.module.scss';
-import { Article, ArticleViewEnum } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
 
 interface ArticleListProps {

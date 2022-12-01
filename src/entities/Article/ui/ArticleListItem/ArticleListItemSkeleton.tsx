@@ -3,8 +3,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Card } from 'shared/ui/Card/Card';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { ArticleViewEnum } from '../../model/consts/consts';
 import cls from './ArticleListItem.module.scss';
-import { ArticleViewEnum } from '../../model/types/article';
 
 interface ArticleListItemSkeletonProps {
   className?: string;

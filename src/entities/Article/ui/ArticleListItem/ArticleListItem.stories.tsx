@@ -1,9 +1,8 @@
-/* eslint-disable */
-
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ArticleListItem } from './ArticleListItem';
-import { Article, ArticleViewEnum } from '../../model/types/article';
+import { Article } from '../../model/types/article';
+import { ArticleViewEnum } from '../../model/consts/consts';
 
 const article = {
   id: '1',

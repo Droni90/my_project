@@ -12,7 +12,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/ui/Input';
+import { Input } from 'shared/ui/Input/Input';
 import { SortOrder } from 'shared/types';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
