@@ -8,6 +8,8 @@ import React, {
   useState,
 } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { UseTheme } from 'app/providers/ThemeProvider';
+import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -24,6 +26,7 @@ export const Modal: FC<ModalProps> = (props) => {
   const ANIMATION_DELAY = 300;
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const { theme } = UseTheme();
   const timerRef = useRef<ReturnType<typeof setTimeout>>() as MutableRefObject<
     ReturnType<typeof setTimeout>
   >;
@@ -38,10 +41,7 @@ export const Modal: FC<ModalProps> = (props) => {
     [cls.isClosing]: isClosing,
   };
 
-  const onContentClick = (evt: React.MouseEvent) => {
-    evt.stopPropagation();
-  };
-  const closeHadnler = useCallback(() => {
+  const closeHandler = useCallback(() => {
     if (onClose) {
       setIsClosing(true);
       timerRef.current = setTimeout(() => {
@@ -54,10 +54,10 @@ export const Modal: FC<ModalProps> = (props) => {
   const onKeyDown = useCallback(
     (evt: KeyboardEvent) => {
       if (evt.key === 'Escape') {
-        closeHadnler();
+        closeHandler();
       }
     },
-    [closeHadnler]
+    [closeHandler]
   );
 
   useEffect(() => {
@@ -77,12 +77,11 @@ export const Modal: FC<ModalProps> = (props) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.Modal, [className], mods)}>
-        <div className={cls.overlay} onClick={closeHadnler}>
-          <div className={classNames(cls.content)} onClick={onContentClick}>
-            {children}
-          </div>
-        </div>
+      <div
+        className={classNames(cls.Modal, [className, theme, 'app_modal'], mods)}
+      >
+        <Overlay onClick={closeHandler} />
+        <div className={classNames(cls.content)}>{children}</div>
       </div>
     </Portal>
   );
