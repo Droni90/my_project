@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { StoreDecorator } from 'shared/config/storybook/storeDecorator/storeDecorator';
-import { Normal } from 'features/ArticleRecommendationsList/ui/ArticleRecommendationsList/ArticleRecommendationsList.stories';
+import { StoreDecorator } from '@/shared/config/storybook/storeDecorator/storeDecorator';
+import { Normal } from '@/features/ArticleRecommendationsList/ui/ArticleRecommendationsList/ArticleRecommendationsList.stories';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 
 export default {

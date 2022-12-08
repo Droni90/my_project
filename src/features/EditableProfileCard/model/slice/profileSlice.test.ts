@@ -1,5 +1,5 @@
-import { CountryEnum } from 'entities/Country';
-import { CurrencyEnum } from 'entities/Currency';
+import { CountryEnum } from '@/entities/Country';
+import { CurrencyEnum } from '@/entities/Currency';
 import { ValidateProfileError } from '../consts/consts';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { profileActions, profileReducer } from './profileSlice';
