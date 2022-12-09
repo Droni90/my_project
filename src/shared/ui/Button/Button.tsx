@@ -24,6 +24,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   disabled?: boolean;
   children?: ReactNode;
+  fullWidth?: boolean;
 }
 export const Button = memo((props: ButtonProps) => {
   const {
@@ -32,6 +33,7 @@ export const Button = memo((props: ButtonProps) => {
     theme = ThemeButton.OUTLINE,
     square,
     disabled,
+    fullWidth,
     size = ButtonSize.M,
     ...otherProps
   } = props;
@@ -39,6 +41,7 @@ export const Button = memo((props: ButtonProps) => {
   const mods: Mods = {
     [cls.square]: square,
     [cls.disabled]: disabled,
+    [cls.fullWidth]: fullWidth,
   };
   return (
     <button
