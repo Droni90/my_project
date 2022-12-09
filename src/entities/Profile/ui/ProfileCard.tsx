@@ -49,9 +49,9 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.ProfileCard, [className, cls.loading])}>
+      <VStack gap="8" max className={classNames(cls.ProfileCard, [className])}>
         <Loader />
-      </div>
+      </VStack>
     );
   }
 
