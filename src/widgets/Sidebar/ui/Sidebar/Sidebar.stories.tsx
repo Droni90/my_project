@@ -6,7 +6,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/themeDecorator/themeDe
 import { Sidebar } from './Sidebar';
 
 export default {
-  title: 'widget/Sidebar',
+  title: 'widgets/Sidebar',
   component: Sidebar,
   argTypes: {
     backgroundColor: { control: 'color' },
