@@ -7,8 +7,7 @@ import {
   ReducerList,
 } from '@/shared/lib/components/DinamicModuleLoader/DynamicModuleLoader';
 
-import { Page } from '@/widgets/Page/Page';
-import { VStack } from '@/shared/ui/Stack';
+import { Page } from '@/widgets/Page';
 
 interface ArticleDetailsPageProps {
   className?: string;

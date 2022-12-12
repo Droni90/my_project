@@ -2,7 +2,7 @@ import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button/Button';
-import { LangSwitcher } from '@/widgets/LangSwitcher/ui/LangSwitcher';
+import { LangSwitcher } from '@/widgets/LangSwitcher';
 import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 import cls from './Sidebar.module.scss';

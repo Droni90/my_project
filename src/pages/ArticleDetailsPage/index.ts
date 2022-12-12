@@ -1,3 +1,5 @@
+export { articleDetailsPageReducer } from './model/slice';
+
 export type { ArticleDetailsPageSchema } from './model/types';
 
 export type { ArticleDetailsRecommendationsSchema } from './model/types/articleDetailsRecommendationsSchema';

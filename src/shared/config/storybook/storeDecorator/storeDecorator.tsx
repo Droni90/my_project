@@ -1,12 +1,11 @@
-/* eslint-disable indent */
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { loginReducer } from '@/features/AuthByUsername/model/slice/LoginSlice';
+import { loginReducer } from '@/features/AuthByUsername';
 import { ReducerList } from '@/shared/lib/components/DinamicModuleLoader/DynamicModuleLoader';
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
-import { addCommentFormReducer } from '@/features/addCommentForm/model/slices/addCommentFormSlice';
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slice';
-import { profileReducer } from '@/features/EditableProfileCard/model/slice/profileSlice';
+import { articleDetailsReducer } from '@/entities/Article';
+import { addCommentFormReducer } from '@/features/addCommentForm';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
+import { profileReducer } from '@/features/EditableProfileCard';
 
 const defaultReducers: ReducerList = {
   loginForm: loginReducer,
@@ -18,12 +17,12 @@ const defaultReducers: ReducerList = {
 
 export const StoreDecorator =
   (state: DeepPartial<StateSchema>, asyncReducers?: ReducerList) =>
-  (StoryComponent: Story) =>
-    (
-      <StoreProvider
-        initialState={state}
-        asyncReducers={{ ...defaultReducers, ...asyncReducers }}
-      >
-        <StoryComponent />
-      </StoreProvider>
-    );
+    (StoryComponent: Story) =>
+      (
+        <StoreProvider
+          initialState={state}
+          asyncReducers={{ ...defaultReducers, ...asyncReducers }}
+        >
+          <StoryComponent />
+        </StoreProvider>
+      );
