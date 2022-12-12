@@ -64,7 +64,7 @@ module.exports = {
     'no-param-reassign': 0,
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
-    'plugin-path-checker/path-checker': 'error',
+    'plugin-path-checker/path-checker': ['error', { alias: '@' }],
   },
   globals: { __IS_DEV__: true, __API__: true, __PROJECT__: true },
   overrides: [
