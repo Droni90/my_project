@@ -1,6 +1,5 @@
 import { memo, ReactNode, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { UseTheme } from '@/app/providers/ThemeProvider';
 import cls from './Drawer.module.scss';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
@@ -8,6 +7,7 @@ import {
   AnimationProvider,
   useAnimationLibs,
 } from '../../lib/components/AnimationProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
 
 interface DrawerProps {
   className?: string;
@@ -21,7 +21,7 @@ const height = window.innerHeight - 100;
 export const DrawerContent = memo((props: DrawerProps) => {
   const { Spring, Gesture } = useAnimationLibs();
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
-  const { theme } = UseTheme();
+  const { theme } = useTheme();
   const { className, children, onClose, isOpen, lazy } = props;
 
   const openDrawer = useCallback(() => {
