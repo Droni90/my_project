@@ -4,13 +4,13 @@ import ListIcon from '@/shared/assets/icons/list-24-24.svg';
 import TiledIcon from '@/shared/assets/icons/tiled-24-24.svg';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
-import { ArticleViewEnum } from '../../model/consts/consts';
 import cls from './ArticleViewSelector.module.scss';
+import { ArticleViewEnum } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
-  className?: string;
-  view: ArticleViewEnum;
-  onViewClick: (view: ArticleViewEnum) => void;
+    className?: string;
+    view: ArticleViewEnum;
+    onViewClick: (view: ArticleViewEnum) => void;
 }
 
 const viewTypes = [
