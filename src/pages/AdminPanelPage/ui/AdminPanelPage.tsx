@@ -21,7 +21,10 @@ const AdminPanelPage = (props: ArticleDetailsPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <Page className={classNames('', [className])}>
+      <Page
+        data-testid="AdminPanelPage"
+        className={classNames('', [className])}
+      >
         {/* <VStack gap="16" max></VStack> */}
       </Page>
     </DynamicModuleLoader>

@@ -4,7 +4,7 @@ import { Page } from '@/widgets/Page';
 const MainPage = () => {
   const { t } = useTranslation('mainPage');
   return (
-    <Page>
+    <Page data-testid="MainPage">
       {/* <RatingCard */}
       {/*   title="КАК ВАС СТАТЬЯ" */}
       {/*   feedBackTitle="Оставьте отзыв о статье" */}

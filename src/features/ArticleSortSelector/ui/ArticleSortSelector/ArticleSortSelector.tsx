@@ -2,16 +2,16 @@ import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Select, SelectOption } from '@/shared/ui/Select';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import cls from './ArticleSortSelector.module.scss';
 import { ArticlesSortField } from '@/entities/Article';
 
 interface ArticleSortSelectorProps {
-    className?: string;
-    sort: ArticlesSortField;
-    order: SortOrder;
-    onChangeOrder: (newOrder: SortOrder) => void;
-    onChangeSort: (newSort: ArticlesSortField) => void;
+  className?: string;
+  sort: ArticlesSortField;
+  order: SortOrder;
+  onChangeOrder: (newOrder: SortOrder) => void;
+  onChangeSort: (newSort: ArticlesSortField) => void;
 }
 
 export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
