@@ -598,6 +598,15 @@
         "MANAGER"
       ],
       "avatar": "https://funart.pro/uploads/posts/2021-07/1626205442_26-funart-pro-p-kot-s-ukhmilkoi-zhivotnie-krasivo-foto-29.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://funart.pro/uploads/posts/2021-07/1626205442_26-funart-pro-p-kot-s-ukhmilkoi-zhivotnie-krasivo-foto-29.jpg"
     }
   ],
   "profile": [
