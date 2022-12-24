@@ -53,6 +53,8 @@ export const StarRating = memo((props: StarRatingProps) => {
           )}
           key={star}
           Svg={StarIcon}
+          data-testid={`StarRating.${star}`}
+          data-selected={currentStarsCount >= star}
         />
       ))}
     </div>

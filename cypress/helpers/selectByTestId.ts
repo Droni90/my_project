@@ -1,2 +1,2 @@
 export const selectByTestId = (testId: string): string =>
-  `[data-testid=${testId}]`;
+  `[data-testid="${testId}"]`;
