@@ -17,7 +17,7 @@ describe('EditableProfileCard.cy.tsx', () => {
         }}
       >
         <EditableProfileCard id="4" />
-      </TestProvider>
+      </TestProvider>,
     );
   });
 });

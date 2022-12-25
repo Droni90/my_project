@@ -50,5 +50,5 @@ export const ArticleListItemSkeleton = memo(
         </Card>
       </div>
     );
-  }
+  },
 );

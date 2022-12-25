@@ -40,7 +40,7 @@ export function useModal(props: UseModalProps) {
         close();
       }
     },
-    [close]
+    [close],
   );
 
   useEffect(() => {

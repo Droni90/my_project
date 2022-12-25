@@ -24,7 +24,7 @@ root.render(
         </ThemeProvider>
       </ErrorBoundary>
     </StoreProvider>
-  </BrowserRouter>
+  </BrowserRouter>,
 );
 export { useTheme } from '@/shared/lib/hooks/useTheme';
 export { Theme } from '@/shared/const/theme';

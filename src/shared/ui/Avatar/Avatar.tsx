@@ -21,7 +21,7 @@ export const Avatar = memo((props: AvatarProps) => {
       width: size,
       height: size,
     }),
-    [size]
+    [size],
   );
 
   const mods: Mods = {};

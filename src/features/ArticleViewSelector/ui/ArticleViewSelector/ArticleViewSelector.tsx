@@ -8,9 +8,9 @@ import cls from './ArticleViewSelector.module.scss';
 import { ArticleViewEnum } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
-    className?: string;
-    view: ArticleViewEnum;
-    onViewClick: (view: ArticleViewEnum) => void;
+  className?: string;
+  view: ArticleViewEnum;
+  onViewClick: (view: ArticleViewEnum) => void;
 }
 
 const viewTypes = [

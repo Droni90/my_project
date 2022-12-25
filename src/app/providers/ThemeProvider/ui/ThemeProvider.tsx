@@ -21,7 +21,7 @@ const ThemeProvider = (props: ThemeProviderProps) => {
       theme,
       setTheme,
     }),
-    [theme]
+    [theme],
   );
 
   return (

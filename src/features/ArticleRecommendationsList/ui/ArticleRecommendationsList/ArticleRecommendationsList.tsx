@@ -33,5 +33,5 @@ export const ArticleRecommendationsList = memo(
         <ArticleList articles={articles} target="_blank" />
       </VStack>
     );
-  }
+  },
 );

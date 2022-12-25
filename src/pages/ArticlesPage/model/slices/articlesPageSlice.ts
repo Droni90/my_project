@@ -20,7 +20,7 @@ const articlesAdapter = createEntityAdapter<Article>({
 });
 
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-  (state) => state.articlesPage || articlesAdapter.getInitialState()
+  (state) => state.articlesPage || articlesAdapter.getInitialState(),
 );
 
 const articlesPageSlice = createSlice({
@@ -62,7 +62,7 @@ const articlesPageSlice = createSlice({
     },
     initState: (state) => {
       const view = localStorage.getItem(
-        ARTICLES_VIEW_LOCAL_STORAGE_KEY
+        ARTICLES_VIEW_LOCAL_STORAGE_KEY,
       ) as ArticleViewEnum;
       state.view = view;
       state.limit = view === ArticleViewEnum.LIST ? 4 : 9;

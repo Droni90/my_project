@@ -64,10 +64,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       dispatch(
         profileActions.updateProfile({
           first: value || '',
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeLastname = useCallback(
@@ -75,10 +75,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       dispatch(
         profileActions.updateProfile({
           lastname: value || '',
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeAge = useCallback(
@@ -87,17 +87,17 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         dispatch(
           profileActions.updateProfile({
             age: Number(value || 0),
-          })
+          }),
         );
       } else {
         dispatch(
           profileActions.updateProfile({
             age: data?.age,
-          })
+          }),
         );
       }
     },
-    [dispatch, data?.age]
+    [dispatch, data?.age],
   );
 
   const onChangeCity = useCallback(
@@ -105,10 +105,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       dispatch(
         profileActions.updateProfile({
           city: value || '',
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeAvatar = useCallback(
@@ -116,10 +116,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       dispatch(
         profileActions.updateProfile({
           avatar: value || '',
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeUsername = useCallback(
@@ -127,10 +127,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       dispatch(
         profileActions.updateProfile({
           username: value || '',
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCurrency = useCallback(
@@ -138,10 +138,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       dispatch(
         profileActions.updateProfile({
           currency,
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCountry = useCallback(
@@ -149,10 +149,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       dispatch(
         profileActions.updateProfile({
           country,
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
   return (
     <DynamicModuleLoader reducers={reducers}>

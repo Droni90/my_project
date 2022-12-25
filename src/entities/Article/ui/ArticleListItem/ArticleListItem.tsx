@@ -29,7 +29,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
   if (view === ArticleViewEnum.LIST) {
     const textBlock = article.blocks.find(
-      (block) => block.type === ArticleBlockType.TEXT
+      (block) => block.type === ArticleBlockType.TEXT,
     ) as ArticleTextBlock;
 
     return (

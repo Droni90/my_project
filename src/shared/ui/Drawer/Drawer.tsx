@@ -68,7 +68,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
       filterTaps: true,
       bounds: { top: 0 },
       rubberband: true,
-    }
+    },
   );
 
   if (!isOpen) {

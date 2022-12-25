@@ -21,7 +21,7 @@ describe('profileSlice.test', () => {
       readonly: false,
     };
     expect(
-      profileReducer(state as ProfileSchema, profileActions.setReadonly(true))
+      profileReducer(state as ProfileSchema, profileActions.setReadonly(true)),
     ).toEqual({ readonly: true });
   });
 
@@ -31,7 +31,10 @@ describe('profileSlice.test', () => {
       form: { username: '' },
     };
     expect(
-      profileReducer(state as ProfileSchema, profileActions.cancelEditProfile())
+      profileReducer(
+        state as ProfileSchema,
+        profileActions.cancelEditProfile(),
+      ),
     ).toEqual({ readonly: true, validateErrors: undefined, data, form: data });
   });
 
@@ -42,8 +45,8 @@ describe('profileSlice.test', () => {
     expect(
       profileReducer(
         state as ProfileSchema,
-        profileActions.updateProfile({ username: 'AZAZA' })
-      )
+        profileActions.updateProfile({ username: 'AZAZA' }),
+      ),
     ).toEqual({ form: { username: 'AZAZA' } });
   });
 
@@ -53,7 +56,7 @@ describe('profileSlice.test', () => {
       validateError: [ValidateProfileError.SERVER_ERROR],
     };
     expect(
-      profileReducer(state as ProfileSchema, updateProfileData.pending)
+      profileReducer(state as ProfileSchema, updateProfileData.pending),
     ).toEqual({ isLoading: true, validateErrors: undefined });
   });
 
@@ -64,8 +67,8 @@ describe('profileSlice.test', () => {
     expect(
       profileReducer(
         state as ProfileSchema,
-        updateProfileData.fulfilled(data, '')
-      )
+        updateProfileData.fulfilled(data, ''),
+      ),
     ).toEqual({
       isLoading: false,
       validateErrors: undefined,

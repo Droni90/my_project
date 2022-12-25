@@ -26,7 +26,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
     (value: string) => {
       onChange?.(value as CountryEnum);
     },
-    [onChange]
+    [onChange],
   );
 
   const mods: Mods = {};

@@ -17,7 +17,8 @@ import {
   getRouteArticleEdit,
   getRouteArticles,
   getRouteForbidden,
-  getRouteMain, getRouteProfile,
+  getRouteMain,
+  getRouteProfile,
 } from '@/shared/const/router';
 import { AppRoutesProps } from '@/shared/types/router';
 

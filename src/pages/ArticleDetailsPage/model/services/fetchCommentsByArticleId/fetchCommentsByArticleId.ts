@@ -26,5 +26,5 @@ export const fetchCommentsByArticleId = createAsyncThunk<
     } catch (e) {
       return rejectWithValue('error');
     }
-  }
+  },
 );

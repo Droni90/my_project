@@ -16,7 +16,7 @@ describe('classNames', () => {
       classNames('someClass', ['class1', 'class2'], {
         hovered: true,
         scrollable: true,
-      })
+      }),
     ).toBe(expected);
   });
 });

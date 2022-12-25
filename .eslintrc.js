@@ -14,13 +14,11 @@ module.exports = {
     'react-hooks',
     'plugin-path-checker',
     'unused-imports',
+    'prettier',
   ],
   rules: {
-    'react/jsx-indent': [2, 2],
-    'react/jsx-indent-props': [2, 2],
     'unused-imports/no-unused-imports': 'error',
     'object-curly-newline': 'off',
-    indent: [2, 2],
     'react/jsx-filename-extension': [
       2,
       { extensions: ['.js', '.jsx', '.tsx'] },
@@ -85,6 +83,7 @@ module.exports = {
         ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
       },
     ],
+    'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
   },
   globals: { __IS_DEV__: true, __API__: true, __PROJECT__: true },
   overrides: [

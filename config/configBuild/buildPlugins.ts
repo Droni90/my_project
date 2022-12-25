@@ -48,17 +48,21 @@ export const buildPlugins = ({
     plugins.push(
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
-      })
+      }),
     );
   }
   if (isProd) {
-    plugins.push(new MiniCssExtructPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
-    }));
-    plugins.push(new CopyPlugin({
-      patterns: [{ from: paths.locales, to: paths.buildLocales }],
-    }));
+    plugins.push(
+      new MiniCssExtructPlugin({
+        filename: 'css/[name].[contenthash:8].css',
+        chunkFilename: 'css/[name].[contenthash:8].css',
+      }),
+    );
+    plugins.push(
+      new CopyPlugin({
+        patterns: [{ from: paths.locales, to: paths.buildLocales }],
+      }),
+    );
   }
 
   return plugins;

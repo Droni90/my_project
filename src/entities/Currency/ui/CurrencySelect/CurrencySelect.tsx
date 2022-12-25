@@ -25,7 +25,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
     (value: string) => {
       onChange?.(value as CurrencyEnum);
     },
-    [onChange]
+    [onChange],
   );
 
   const mods: Mods = {};

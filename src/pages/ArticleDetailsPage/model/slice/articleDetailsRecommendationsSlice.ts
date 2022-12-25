@@ -12,7 +12,7 @@ export const getArticleRecommendations =
   recommendationsAdapter.getSelectors<StateSchema>(
     (state) =>
       state.articleDetailsPage?.recommendations ||
-      recommendationsAdapter.getInitialState()
+      recommendationsAdapter.getInitialState(),
   );
 
 const articleDetailsRecommendationsSlice = createSlice({
@@ -24,7 +24,7 @@ const articleDetailsRecommendationsSlice = createSlice({
         error: undefined,
         ids: [],
         entities: {},
-      }
+      },
     ),
   reducers: {},
   extraReducers: (builder) => {

@@ -5,9 +5,9 @@ import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { ArticleType } from '@/entities/Article';
 
 interface ArticleTypeTabsProps {
-    className?: string;
-    value: ArticleType;
-    onChangeType: (type: ArticleType) => void;
+  className?: string;
+  value: ArticleType;
+  onChangeType: (type: ArticleType) => void;
 }
 
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
@@ -21,14 +21,14 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
       { value: ArticleType.ECONOMICS, content: t('Экономика') },
       { value: ArticleType.SCIENCE, content: t('Наука') },
     ],
-    [t]
+    [t],
   );
 
   const onTabClick = useCallback(
     (tab: TabItem) => {
       onChangeType(tab.value as ArticleType);
     },
-    [onChangeType]
+    [onChangeType],
   );
 
   return (

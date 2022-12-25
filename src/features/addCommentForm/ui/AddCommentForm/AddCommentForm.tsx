@@ -40,7 +40,7 @@ const AddCommentForm = (props: AddCommentFormProps) => {
     (value: string) => {
       dispatch(addCommentFormActions.setText(value));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onSendHandler = useCallback(() => {

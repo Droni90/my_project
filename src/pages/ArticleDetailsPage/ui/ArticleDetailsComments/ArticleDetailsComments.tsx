@@ -37,7 +37,7 @@ export const ArticleDetailsComments = memo(
       (text: string) => {
         dispatch(addCommentForArticle(text));
       },
-      [dispatch]
+      [dispatch],
     );
     return (
       <VStack gap="16" max className={classNames('', [className])}>
@@ -48,5 +48,5 @@ export const ArticleDetailsComments = memo(
         <CommentList isLoading={commentIsLoading} comments={comments} />
       </VStack>
     );
-  }
+  },
 );

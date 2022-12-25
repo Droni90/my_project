@@ -7,7 +7,7 @@ describe('loginSlice.test', () => {
       username: '123',
     };
     expect(
-      loginReducer(state as LoginSchema, loginActions.setUsername('456'))
+      loginReducer(state as LoginSchema, loginActions.setUsername('456')),
     ).toEqual({ username: '456' });
   });
 
@@ -16,7 +16,7 @@ describe('loginSlice.test', () => {
       password: '123',
     };
     expect(
-      loginReducer(state as LoginSchema, loginActions.setPassword('456'))
+      loginReducer(state as LoginSchema, loginActions.setPassword('456')),
     ).toEqual({ password: '456' });
   });
 });

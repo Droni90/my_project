@@ -6,9 +6,7 @@
   "views": 1022,
   "createdAt": "26.04.2022",
   "userId": "1",
-  "type": [
-    "IT"
-  ],
+  "type": ["IT"],
   "blocks": [
     {
       "id": "1",
@@ -73,9 +71,7 @@
     "id": "1",
     "username": "admin",
     "password": "123",
-    "roles": [
-      "ADMIN"
-    ],
+    "roles": ["ADMIN"],
     "avatar": "https://funart.pro/uploads/posts/2021-07/1626205442_26-funart-pro-p-kot-s-ukhmilkoi-zhivotnie-krasivo-foto-29.jpg"
   }
 }

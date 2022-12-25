@@ -23,5 +23,5 @@ export const ArticleImageBlockComponent = memo(
         )}
       </div>
     );
-  }
+  },
 );

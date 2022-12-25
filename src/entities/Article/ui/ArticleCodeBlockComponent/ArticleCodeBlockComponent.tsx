@@ -17,5 +17,5 @@ export const ArticleCodeBlockComponent = memo(
         <Code text={block.code} />
       </div>
     );
-  }
+  },
 );

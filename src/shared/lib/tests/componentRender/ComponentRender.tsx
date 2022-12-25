@@ -46,7 +46,7 @@ export function TestProvider(props: TestProviderProps) {
 
 export function componentRender(
   component: ReactNode,
-  options: ComponentRenderOptions = {}
+  options: ComponentRenderOptions = {},
 ) {
   return render(<TestProvider options={options}>{component}</TestProvider>);
 }
