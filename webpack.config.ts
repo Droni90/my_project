@@ -18,11 +18,11 @@ export default (env: BuildEnv) => {
     buildLocales: path.resolve(__dirname, 'build', 'locales'),
   };
 
-  const mode: BuildMode = env.mode || 'development';
+  const mode: BuildMode = env?.mode || 'development';
 
   const isDev: boolean = mode === 'development';
-  const PORT: number = env.port || 3005;
-  const apiUrl = env.apiUrl || 'http://localhost:8000';
+  const PORT: number = env?.port || 3005;
+  const apiUrl = env?.apiUrl || 'http://localhost:8000';
 
   const config: webpack.Configuration = buildWebpackConfig({
     mode,
